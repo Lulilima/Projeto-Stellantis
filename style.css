@@ -1,0 +1,335 @@
+/* --------------------------------------------------------------- BARRA SUPERIOR --------------------------------------------------------------- */
+
+.container_barra_superior {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.container_logo_home {
+    padding-left: 20%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+}
+
+.container_botao_superior {
+    display: flex;
+    padding-top: 1.5%;
+    padding-right: auto;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.botao_superior {
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    color:#243782;
+    padding: 0.5%;
+    margin-right: 5%;
+}
+
+.botao_superior:hover {
+    transition: 0.4s;
+    background-color: lavender;
+    border-radius: 10px;
+}
+
+span {
+    margin-right: 20%;
+    color: #243782;
+}
+
+/* --------------------------------------------------------------- CONTEÚDO --------------------------------------------------------------- */
+
+.container_conteudo {
+    display: flex;
+    padding-left: 21%;
+    padding-top: 4%;
+}
+
+.conteudo {
+    width: 30%;
+}
+
+.conteudo h1 {
+    font-size: 4rem;
+    color:steelblue;
+    opacity: 50%;
+    font-weight: 400;
+    width: 50%;
+}
+
+.conteudo h2 {
+    font-size: 1.4rem;
+    color:steelblue;
+    opacity: 50%;
+    font-weight: 400;
+}
+
+.conteudo p {
+    font-size: 1.1rem;
+    color: steelblue;
+    opacity: 50%;
+    font-weight: 400;
+}
+
+.conteudo button {
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    color: steelblue;
+    padding: 0.5%;
+}
+
+.conteudo button:hover {
+    transition: 0.4s;
+    background-color: lavender;
+    border-radius: 10px;
+}
+
+/* --------------------------------------------------------------- BARRA INFERIOR --------------------------------------------------------------- */
+
+.container_barra_inferior {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container_barra_inferior p {
+    color: #243782;
+}
+
+/* --------------------------------------------------------------- GERAL --------------------------------------------------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #243782;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #243782;
+}
+
+label {
+    color:#243782;
+    margin-left: 1%;
+}
+
+/* --------------------------------------------------------------- RECOMPENSAS --------------------------------------------------------------- */
+
+#container-recompensas p {
+    color:#243782;
+}
+
+#conteudo-sidebar {
+    width: 10%;
+    height: fit-content;   
+    border-radius: 10%;
+    box-shadow: 
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    background-color: white;
+    position: absolute;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    line-height: 130%;
+}
+
+#conteudo-sidebar form input {
+    margin-bottom: 5%;
+}
+
+#conteudo-recompensas {
+    width: 50rem;
+    height: fit-content;   
+    border-radius: 1.5rem;
+    box-shadow: 
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    background-color: white;
+    position: absolute;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    line-height: 130%;
+    margin-left: 15%;
+}
+
+#busca-recompensas {
+    border: solid 1px lightgray;
+    border-radius: 5rem;
+    padding-left: 2%;
+}
+
+.conteudo_recompensas {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.botao_recompensas {
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    color:#243782;
+    padding: 0.5%;
+    margin-right: 5%;
+    padding: 2%;
+    padding-bottom: 5%;
+    border-radius: 1rem;
+    width: 25%;
+    margin-bottom: 5%;
+}
+
+.botao_recompensas p {
+    margin-top: 10%;
+}
+
+.botao_recompensas:hover {
+    box-shadow: 
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+    transition: 0.4s;
+}
+
+/* --------------------------------------------------------------- MAPA --------------------------------------------------------------- */
+
+iframe {
+    width: 60%;
+    height: 40rem;
+    position: absolute;
+}
+
+/* --------------------------------------------------------------- CONTA --------------------------------------------------------------- */
+
+#container-conta {
+    display: flex;
+    width: 100%;
+    color:#243782;
+}
+
+#container-conta p {
+    color:#243782;
+}
+
+#conteudo-conta {
+    width: 20%;
+    height: fit-content;   
+    border-radius: 1.5rem;
+    box-shadow: 
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    background-color: white;
+    position: absolute;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#email {
+    border: solid 1px lightgray;
+    border-radius: 5rem;
+    padding-left: 2%;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 10%;
+}
+
+#senha {
+    border: solid 1px lightgray;
+    border-radius: 5rem;
+    padding-left: 2%;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 10%;
+}
+
+#login {
+    border: solid 1px lightgray;
+    border-radius: 0.5rem;
+    width: 5rem;
+    height: 2rem;
+    margin-top: 10%;
+    font-size: 1rem;
+    margin-left: 33%;
+}
+
+#esqueceu-senha {
+    width: 12rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin-left: 11%;
+}
+
+#criar-conta {
+    width: 9rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin-left: 22%;
+}
+
+/* --------------------------------------------------------------- TROCAR SENHA --------------------------------------------------------------- */
+
+#recuperar-senha {
+    border: solid 1px lightgray;
+    border-radius: 0.5rem;
+    width: 9rem;
+    height: 2rem;
+    margin-top: 10%;
+    font-size: 1rem;
+    margin-left: 20%;
+}
+
+/* --------------------------------------------------------------- CADASTRO --------------------------------------------------------------- */
+
+#criar {
+    border: solid 1px lightgray;
+    border-radius: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    margin-top: 10%;
+    font-size: 1rem;
+    margin-left: 15%;
+}
+
+#cpf {
+    border: solid 1px lightgray;
+    border-radius: 5rem;
+    padding-left: 2%;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 10%;
+}
+
+#celular {
+    border: solid 1px lightgray;
+    border-radius: 5rem;
+    padding-left: 2%;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 10%;
+}

@@ -1,0 +1,322 @@
+{
+  "intents": [
+    {
+      "intent": "mapa",
+      "examples": [
+        {
+          "text": "abrir mapa"
+        },
+        {
+          "text": "buscar mapa"
+        },
+        {
+          "text": "locais"
+        },
+        {
+          "text": "locais de recarga"
+        },
+        {
+          "text": "local mais perto de mim"
+        },
+        {
+          "text": "lugares de recarga"
+        },
+        {
+          "text": "lugares de retirada"
+        },
+        {
+          "text": "onde fica o local mais próximo"
+        },
+        {
+          "text": "quero ver locais de retirada"
+        },
+        {
+          "text": "quero ver o mapa"
+        },
+        {
+          "text": "Quero visualizar o mapa"
+        },
+        {
+          "text": "ver mapa"
+        },
+        {
+          "text": "visualizar mapa"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "recompensas",
+      "examples": [
+        {
+          "text": "buscar recompensas"
+        },
+        {
+          "text": "comprar"
+        },
+        {
+          "text": "comprar recompensas"
+        },
+        {
+          "text": "fazer compras"
+        },
+        {
+          "text": "gastar pontos"
+        },
+        {
+          "text": "gastar pontuação"
+        },
+        {
+          "text": "lista de recompensas"
+        },
+        {
+          "text": "quero gastar meus pontos"
+        },
+        {
+          "text": "quero resgatar minhas recompensas"
+        },
+        {
+          "text": "quero utilizar minha pontuação"
+        },
+        {
+          "text": "resgatar pontos"
+        },
+        {
+          "text": "resgatar recompensas"
+        },
+        {
+          "text": "usar meus pontos"
+        },
+        {
+          "text": "usar pontos"
+        },
+        {
+          "text": "visualizar meus pontos"
+        },
+        {
+          "text": "visualizar recompensas"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "viagem",
+      "examples": [
+        {
+          "text": "começar"
+        },
+        {
+          "text": "começar viagem"
+        },
+        {
+          "text": "criar caminho"
+        },
+        {
+          "text": "criar viagem"
+        },
+        {
+          "text": "escolher veículo"
+        },
+        {
+          "text": "logar viagem"
+        },
+        {
+          "text": "quero iniciar uma viagem"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "bicicleta",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Bicicleta",
+          "synonyms": [
+            "baike",
+            "baique",
+            "bicicleta",
+            "bike",
+            "byke"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "carro",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Carro",
+          "synonyms": [
+            "carro",
+            "carro elétrico"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "patinete",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Patinete",
+          "synonyms": [
+            "patinete"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Boas-vindas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá. Como posso te ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_10_1669932206149",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Clique aqui para abrir nossa lista de recompensas."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#recompensas",
+      "dialog_node": "node_10_1669932206149",
+      "previous_sibling": "node_1_1669932171696"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Clique aqui para visualizar nosso mapa."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#mapa",
+      "dialog_node": "node_1_1669932171696",
+      "previous_sibling": "node_9_1669930942750"
+    },
+    {
+      "type": "standard",
+      "title": "veiculo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sua viagem foi iniciada."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1669930942750",
+      "conditions": "@bicicleta:Bicicleta || @carro:Carro || @patinete:Patinete",
+      "dialog_node": "node_8_1669931376130"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Selecione seu veículo:\n1 - Carro\n2 - Bicicleta\n3 - Patinete"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#viagem",
+      "dialog_node": "node_9_1669930942750",
+      "previous_sibling": "Bem-vindo"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Transporte",
+  "language": "pt-br",
+  "description": ""
+}

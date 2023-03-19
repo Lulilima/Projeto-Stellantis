@@ -1,0 +1,224 @@
+[
+    {
+        "id": "18460767acdc1951",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "68a5e3d8670e8d3f",
+        "type": "microphone",
+        "z": "18460767acdc1951",
+        "name": "",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "f3ce5e02795b12c2",
+                "1aee7ca6c94c35ea"
+            ]
+        ]
+    },
+    {
+        "id": "f3ce5e02795b12c2",
+        "type": "debug",
+        "z": "18460767acdc1951",
+        "name": "entrada",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1aee7ca6c94c35ea",
+        "type": "watson-speech-to-text",
+        "z": "18460767acdc1951",
+        "name": "",
+        "alternatives": 1,
+        "speakerlabels": false,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "BroadbandModel",
+        "bandhidden": "",
+        "keywords": "",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "irRx9qDnmMuzaSNutmyLgo6z-RxE74yFZh_vzI-coj-O",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/270b6037-7c2c-4c9a-8079-be54203284b8",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "7692438d65857d72"
+            ]
+        ]
+    },
+    {
+        "id": "7a67dd73c52c77c9",
+        "type": "watson-assistant-v2",
+        "z": "18460767acdc1951",
+        "name": "",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/3dc54a34-4b63-4786-9ab9-a8fd442fac53",
+        "assistant_id": "5044d094-e7f3-4d06-9b0a-0d6a943da1d9",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 670,
+        "y": 140,
+        "wires": [
+            [
+                "cafc4ecb08027200",
+                "c0dc5c517815a17e"
+            ]
+        ]
+    },
+    {
+        "id": "4ee0abbeb8b1d523",
+        "type": "watson-text-to-speech",
+        "z": "18460767acdc1951",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaV3Voice",
+        "voicehidden": "",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "2Kurv9HaVb2OenJBPKO6KwkBknfG7VtoXBXLBSHIOb2x",
+        "payload-response": false,
+        "service-endpoint": "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/25a36da3-a8d2-4edf-9491-5e27c4f4a4f0",
+        "x": 1040,
+        "y": 140,
+        "wires": [
+            [
+                "52d7631b8a15ee58",
+                "48cec86092b8fffd"
+            ]
+        ]
+    },
+    {
+        "id": "52d7631b8a15ee58",
+        "type": "debug",
+        "z": "18460767acdc1951",
+        "name": "saída",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cafc4ecb08027200",
+        "type": "debug",
+        "z": "18460767acdc1951",
+        "name": "watson",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "c0dc5c517815a17e",
+        "type": "function",
+        "z": "18460767acdc1951",
+        "name": "saída",
+        "func": "msg.payload = {\n    type: \"voice\",\n    content: msg.payload\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 140,
+        "wires": [
+            [
+                "4ee0abbeb8b1d523",
+                "44040776a15a6996"
+            ]
+        ]
+    },
+    {
+        "id": "48cec86092b8fffd",
+        "type": "play audio",
+        "z": "18460767acdc1951",
+        "name": "",
+        "voice": "1",
+        "x": 1250,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "44040776a15a6996",
+        "type": "debug",
+        "z": "18460767acdc1951",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "7692438d65857d72",
+        "type": "function",
+        "z": "18460767acdc1951",
+        "name": "entrada",
+        "func": "msg.params = {\n    \"session_id\" : msg.payload.session_id !== 'undefined'? msg.payload.session_id : \"\"\n};\nmsg.payload = msg.payload.mensagem;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 140,
+        "wires": [
+            [
+                "7a67dd73c52c77c9"
+            ]
+        ]
+    }
+]
